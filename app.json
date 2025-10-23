@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "Legal Lifelines Test",
+    "slug": "legal-lifelines-test",
+    "splash": {
+      "resizeMode": "contain",
+      "image": "./assets/logo.png",
+      "backgroundColor": "#ffffff"
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.2.35",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.alienorce.legallifelines",
+      "buildNumber": "1.2.34",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Legal Lifelines requires access to your camera to capture video for stop and search video.",
+        "NSMicrophoneUsageDescription": "Legal Lifelines requires access to your microphone to capture audio for stop and search video.",
+        "NSPhotoLibraryAddUsageDescription": "Legal Lifelines requires access to save to your gallery to save stop and search videos.",
+        "NSPhotoLibraryUsageDescription": "Legal Lifelines requires access to your gallery to upload local stop and search videos to our secure servers."
+      }
+    },
+    "android": {
+      "package": "com.alienorce.legallifelines",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "splash": {
+        "image": "./assets/logo.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "21bb6a29-0837-4e6d-8d2a-116f088a1b30"
+      }
+    }
+  }
+}
