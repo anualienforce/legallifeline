@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Legal Lifelines Test",
-    "slug": "legal-lifelines-test",
+    "name": "Legal Lifelines",
+    "slug": "legal-lifelines",
     "splash": {
       "resizeMode": "contain",
       "image": "./assets/logo.png",
@@ -11,7 +11,7 @@
       "ios",
       "android"
     ],
-    "version": "1.2.35",
+    "version": "1.2.40",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "updates": {
