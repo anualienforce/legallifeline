@@ -27,13 +27,20 @@ workflows:
       - name: Build .app for iOS Simulator
         script: |
           cd ios
-          # Replace MyApp with your real workspace/scheme name after prebuild
+
+          WORKSPACE=$(ls *.xcworkspace | head -n 1)
+          echo "Using workspace: $WORKSPACE"
+
+          SCHEME=$(basename "$WORKSPACE" .xcworkspace)
+          echo "Using scheme: $SCHEME"
+
           xcodebuild \
-            -workspace MyApp.xcworkspace \
-            -scheme MyApp \
-            -configuration Debug \
-            -sdk iphonesimulator \
-            -derivedDataPath build
+           -workspace "$WORKSPACE" \
+           -scheme "$SCHEME" \
+           -configuration Debug \
+           -sdk iphonesimulator \
+           -derivedDataPath build
+
 
     artifacts:
       - ios/build/Build/Products/Debug-iphonesimulator/*.app
