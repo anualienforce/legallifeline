@@ -35,18 +35,16 @@ workflows:
 
       - name: Build .app for iOS Simulator
         script: |
-         set -euo pipefail
-         cd ios
-         echo "Listing iOS directory:"
-         ls
+          set -euo pipefail
+          cd ios
 
-         xcodebuild \
-          -workspace LegalLifelines.xcworkspace \
-          -scheme LegalLifelines \
-          -configuration Debug \
-          -sdk iphonesimulator \
-          -destination 'generic/platform=iOS Simulator' \
-          -derivedDataPath build
+          xcodebuild \
+            -workspace LegalLifelines.xcworkspace \
+            -scheme LegalLifelines \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build
 
 
 
