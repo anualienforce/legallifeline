@@ -44,7 +44,7 @@ workflows:
             -scheme LegalLifelines \
             -configuration Debug \
             -sdk iphonesimulator \
-            -derivedDataPath ../build \
+            -derivedDataPath build \
             -quiet
 
     artifacts:
