@@ -13,14 +13,10 @@ workflows:
         - ios/Pods
         - node_modules
 
-    scripts:
-      - name: Install JS dependencies
-        script: |
-          if [ -f yarn.lock ]; then
-            yarn install --frozen-lockfile
-          else
-            npm install
-          fi
+    scripts: 
+      - name: Install Node deps 
+        script: | 
+          npm install
 
 
       - name: Install CocoaPods
