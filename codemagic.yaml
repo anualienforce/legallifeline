@@ -30,18 +30,17 @@ workflows:
           cd ios
           pod install
 
-      - name: Build .app for iOS Simulator
-        script: |
+      - name: Build .app for iOS Simulator script
           set -euo pipefail
-          cd ios
+          cd ios/App
 
           xcodebuild \
             -workspace LegalLifelines.xcworkspace \
             -scheme LegalLifelines \
             -configuration Debug \
             -sdk iphonesimulator \
-            -destination 'generic/platform=iOS Simulator' \
-            -derivedDataPath build
+            -derivedDataPath ../build
+
 
     artifacts:
       - ios/build/Build/Products/Debug-iphonesimulator/*.app
