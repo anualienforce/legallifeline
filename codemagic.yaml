@@ -48,4 +48,4 @@ workflows:
             -quiet
 
     artifacts:
-      - ios/build/Build/Products/Debug-iphonesimulator/*.app
+      - ios/build/Build/Products/Release-iphonesimulator/*.app
