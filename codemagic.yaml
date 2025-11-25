@@ -10,8 +10,8 @@ workflows:
     cache:
       cache_paths:
         - $HOME/Library/Caches/CocoaPods
-        - ios/Pods
         - node_modules
+        # REMOVED: - ios/Pods  <-- THIS WAS CAUSING THE ERROR
 
     scripts:
       - name: Install Node deps
@@ -28,7 +28,11 @@ workflows:
         script: |
           set -euo pipefail
           cd ios
-          pod install
+          # Force clean any cached artifacts
+          rm -rf Pods
+          rm -rf Podfile.lock
+          # Install with repo update to ensure correct arch specs
+          pod install --repo-update
 
       - name: Build .app for iOS Simulator 
         script: |
@@ -40,8 +44,8 @@ workflows:
             -scheme LegalLifelines \
             -configuration Debug \
             -sdk iphonesimulator \
-            -derivedDataPath ../build
-
+            -derivedDataPath ../build \
+            -quiet
 
     artifacts:
       - ios/build/Build/Products/Debug-iphonesimulator/*.app
