@@ -66,6 +66,10 @@ export default class News extends React.Component {
           isBrowserOpen: false,
           browserUrl: null,
         });
+      })
+      .catch((error) => {
+        console.error(error);
+        this.setState({ isLoading: false }); // Ensure loading stops even if there is an error
       });
   }
 
@@ -77,17 +81,16 @@ export default class News extends React.Component {
   }
 
   closeNews() {
-    this.getNews();
+    // If you want to reload news when closing the browser:
+    this.setState({ isBrowserOpen: false });
+    // Or if you want to re-fetch: this.getNews();
   }
 
   render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <WebView source={{ uri: "https://www.theguardian.com/uk/ukcrime" }} />
-      </View>
-    );
+    const { colors } = theme;
+
+    // 1. SHOW LOADING INDICATOR
     if (this.state.isLoading) {
-      const { colors } = theme;
       return (
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -97,11 +100,15 @@ export default class News extends React.Component {
             color={colors.primary}
             size="large"
           />
+          <Text style={{ marginTop: 10, color: colors.primary }}>
+            Loading News...
+          </Text>
         </View>
       );
     }
+
+    // 2. SHOW BROWSER (If a news item was clicked)
     if (this.state.isBrowserOpen) {
-      const { colors } = theme;
       return (
         <View style={{ flex: 1 }}>
           <Card
@@ -181,13 +188,18 @@ export default class News extends React.Component {
         </View>
       );
     }
+
+    // 3. SHOW NEWS LIST (Default View)
     return (
       <View style={{ flex: 1, marginTop: 30 }}>
         <Row>
           <Col size={20}>
             <TouchableOpacity
               onPress={() => {
-                this.setState({ isNewsOpen: false });
+                // Assuming you want to close the news screen here. 
+                // If this is a screen in a stack, use navigation.goBack()
+                // For now, I kept your original logic but ensure isNewsOpen exists if used
+                if (this.props.onClose) this.props.onClose(); 
               }}
               activeOpacity={1}
             >
