@@ -24,6 +24,14 @@ workflows:
           set -euo pipefail
           npx expo prebuild --platform ios --non-interactive
 
+      - name: Install CocoaPods
+        script: |
+          set -euo pipefail
+          cd ios
+          pod install
+          echo "Contents of ios/ after pod install:"
+          ls
+
 
       - name: Build .app for iOS Simulator
         script: |
