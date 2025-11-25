@@ -42,7 +42,7 @@ workflows:
           xcodebuild \
             -workspace LegalLifelines.xcworkspace \
             -scheme LegalLifelines \
-            -configuration Debug \
+            -configuration Release \
             -sdk iphonesimulator \
             -derivedDataPath build \
             -quiet
