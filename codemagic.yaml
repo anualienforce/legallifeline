@@ -30,7 +30,8 @@ workflows:
           cd ios
           pod install
 
-      - name: Build .app for iOS Simulator script
+      - name: Build .app for iOS Simulator 
+        script: |
           set -euo pipefail
           cd ios/App
 
