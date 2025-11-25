@@ -22,17 +22,18 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.alienorce.legallifelines",
-      "buildNumber": "1.2.34",
+      "bundleIdentifier": "com.legallifelines.imranDev",
+      "buildNumber": "1.2.36",
       "infoPlist": {
         "NSCameraUsageDescription": "Legal Lifelines requires access to your camera to capture video for stop and search video.",
         "NSMicrophoneUsageDescription": "Legal Lifelines requires access to your microphone to capture audio for stop and search video.",
         "NSPhotoLibraryAddUsageDescription": "Legal Lifelines requires access to save to your gallery to save stop and search videos.",
-        "NSPhotoLibraryUsageDescription": "Legal Lifelines requires access to your gallery to upload local stop and search videos to our secure servers."
+        "NSPhotoLibraryUsageDescription": "Legal Lifelines requires access to your gallery to upload local stop and search videos to our secure servers.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "package": "com.alienorce.legallifelines",
+      "package": "com.legallifelines.imranDev",
       "versionCode": 1,
       "permissions": [
         "CAMERA",
@@ -60,7 +61,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "21bb6a29-0837-4e6d-8d2a-116f088a1b30"
+        "projectId": "b1c0b1f5-507a-4222-a483-2ac8d606c11c"
       }
     }
   }

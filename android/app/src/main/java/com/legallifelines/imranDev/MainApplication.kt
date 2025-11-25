@@ -1,4 +1,4 @@
-package com.alienorce.legallifelines
+package com.legallifelines.imranDev
 
 import android.app.Application
 import android.content.res.Configuration

@@ -259,7 +259,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alienorce.legallifelines";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.legallifelines.imranDev";
 				PRODUCT_NAME = "LegalLifelines";
 				SWIFT_OBJC_BRIDGING_HEADER = "LegalLifelines/LegalLifelines-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -288,7 +288,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alienorce.legallifelines";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.legallifelines.imranDev";
 				PRODUCT_NAME = "LegalLifelines";
 				SWIFT_OBJC_BRIDGING_HEADER = "LegalLifelines/LegalLifelines-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
