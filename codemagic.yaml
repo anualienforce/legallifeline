@@ -35,28 +35,20 @@ workflows:
 
       - name: Build .app for iOS Simulator
         script: |
-          set -euo pipefail
-          cd ios
+         set -euo pipefail
+         cd ios
+         echo "Listing iOS directory:"
+         ls
 
-          echo "Workspaces in ios/:"
-          ls *.xcworkspace || echo "No .xcworkspace found"
-
-          # Your Podfile target is `LegalLifelines`, so CocoaPods creates LegalLifelines.xcworkspace
-          WORKSPACE="LegalLifelines.xcworkspace"
-          SCHEME="LegalLifelines"
-
-          echo "Using workspace: $WORKSPACE"
-          echo "Using scheme: $SCHEME"
-
-          xcodebuild \
-            -workspace "$WORKSPACE" \
-            -scheme "$SCHEME" \
-            -configuration Debug \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
-            ARCHS=arm64 \
-            ONLY_ACTIVE_ARCH=YES \
-            -derivedDataPath build
+         xcodebuild \
+          -workspace LegalLifelines.xcworkspace \
+          -scheme LegalLifelines \
+          -configuration Debug \
+          -sdk iphonesimulator \
+          -destination 'generic/platform=iOS Simulator' \
+          ARCHS=arm64 \
+          ONLY_ACTIVE_ARCH=YES \
+          -derivedDataPath build
 
 
 
