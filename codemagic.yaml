@@ -33,7 +33,7 @@ workflows:
       - name: Build .app for iOS Simulator 
         script: |
           set -euo pipefail
-          cd ios/App
+          cd ios
 
           xcodebuild \
             -workspace LegalLifelines.xcworkspace \
