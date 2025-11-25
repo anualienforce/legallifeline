@@ -6,20 +6,20 @@ workflows:
 
     environment:
       node: stable
-      
+
     cache:
       cache_paths:
         - $HOME/Library/Caches/CocoaPods
         - ios/Pods
         - node_modules
 
-    scripts: 
-      - name: Install Node deps 
-        script: | 
+    scripts:
+      - name: Install Node deps
+        script: |
+          set -euo pipefail
           npm install
 
-
-      - name: Generate native iOS project (Expo prebuild)
+      - name: Generate iOS project (Expo prebuild)
         script: |
           set -euo pipefail
           npx expo prebuild --platform ios --non-interactive
@@ -29,9 +29,6 @@ workflows:
           set -euo pipefail
           cd ios
           pod install
-          echo "Contents of ios/ after pod install:"
-          ls
-
 
       - name: Build .app for iOS Simulator
         script: |
@@ -45,8 +42,6 @@ workflows:
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath build
-
-
 
     artifacts:
       - ios/build/Build/Products/Debug-iphonesimulator/*.app
