@@ -25,21 +25,18 @@ workflows:
           pod install
 
       - name: Build .app for iOS Simulator
-        script: |
+         script: |
           cd ios
-
-          WORKSPACE=$(ls *.xcworkspace | head -n 1)
-          echo "Using workspace: $WORKSPACE"
-
-          SCHEME=$(basename "$WORKSPACE" .xcworkspace)
-          echo "Using scheme: $SCHEME"
+          echo "Listing iOS directory:"
+          ls
 
           xcodebuild \
-           -workspace "$WORKSPACE" \
-           -scheme "$SCHEME" \
+           -workspace LegalLifelines.xcworkspace \
+           -scheme LegalLifelines \
            -configuration Debug \
            -sdk iphonesimulator \
            -derivedDataPath build
+
 
 
     artifacts:
