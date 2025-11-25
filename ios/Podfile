@@ -62,5 +62,4 @@ target 'LegalLifelines' do
       # Apply to all pods; if you want only gRPC, check target.name == 'gRPC-C++'
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
     end
-  end
 end
