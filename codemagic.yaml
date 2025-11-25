@@ -19,23 +19,36 @@ workflows:
           npm install
 
 
-      - name: Install CocoaPods
+      - name: Generate native iOS project (Expo prebuild)
         script: |
-          cd ios
-          pod install
+          set -euo pipefail
+          npx expo prebuild --platform ios --non-interactive
+
 
       - name: Build .app for iOS Simulator
         script: |
+          set -euo pipefail
           cd ios
-          echo "Listing iOS directory:"
-          ls
+
+          echo "Workspaces in ios/:"
+          ls *.xcworkspace || echo "No .xcworkspace found"
+
+          # Your Podfile target is `LegalLifelines`, so CocoaPods creates LegalLifelines.xcworkspace
+          WORKSPACE="LegalLifelines.xcworkspace"
+          SCHEME="LegalLifelines"
+
+          echo "Using workspace: $WORKSPACE"
+          echo "Using scheme: $SCHEME"
 
           xcodebuild \
-           -workspace LegalLifelines.xcworkspace \
-           -scheme LegalLifelines \
-           -configuration Debug \
-           -sdk iphonesimulator \
-           -derivedDataPath build
+            -workspace "$WORKSPACE" \
+            -scheme "$SCHEME" \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            ARCHS=arm64 \
+            ONLY_ACTIVE_ARCH=YES \
+            -derivedDataPath build
 
 
 
