@@ -23,7 +23,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.legallifelines.app",
-      "buildNumber": "1.2.35",
+      "buildNumber": "1.2.37",
       "infoPlist": {
         "NSCameraUsageDescription": "Camera access is required so you can record incidents or emergency situations and submit them to our legal team for protection and assistance.",
         "NSMicrophoneUsageDescription": "Microphone access is required to capture clear audio while recording emergency videos, ensuring our legal team receives complete and accurate evidence.",
