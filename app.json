@@ -11,7 +11,7 @@
       "ios",
       "android"
     ],
-    "version": "1.2.40",
+    "version": "1.2.41",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "updates": {
@@ -22,11 +22,11 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.legallifelines.imranDev",
-      "buildNumber": "1.2.36",
+      "bundleIdentifier": "com.legallifelines.app",
+      "buildNumber": "1.2.35",
       "infoPlist": {
-        "NSCameraUsageDescription": "Legal Lifelines requires access to your camera to capture video for stop and search video.",
-        "NSMicrophoneUsageDescription": "Legal Lifelines requires access to your microphone to capture audio for stop and search video.",
+        "NSCameraUsageDescription": "Camera access is required so you can record incidents or emergency situations and submit them to our legal team for protection and assistance.",
+        "NSMicrophoneUsageDescription": "Microphone access is required to capture clear audio while recording emergency videos, ensuring our legal team receives complete and accurate evidence.",
         "NSPhotoLibraryAddUsageDescription": "Legal Lifelines requires access to save to your gallery to save stop and search videos.",
         "NSPhotoLibraryUsageDescription": "Legal Lifelines requires access to your gallery to upload local stop and search videos to our secure servers.",
         "ITSAppUsesNonExemptEncryption": false
@@ -53,9 +53,9 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
-          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
-          "recordAudioAndroid": true
+           "cameraPermission": "Camera access is required so you can record incidents or emergency situations and submit them to our legal team for protection and assistance.",
+           "microphonePermission": "Microphone access is required to capture clear audio while recording emergency videos, ensuring our legal team receives complete and accurate evidence.",
+           "recordAudioAndroid": true
         }
       ]
     ],

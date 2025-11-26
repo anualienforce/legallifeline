@@ -241,6 +241,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LegalLifelines/LegalLifelines.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -259,14 +260,13 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.legallifelines.imranDev";
-				PRODUCT_NAME = "LegalLifelines";
+				PRODUCT_BUNDLE_IDENTIFIER = com.legallifelines.app;
+				PRODUCT_NAME = LegalLifelines;
 				SWIFT_OBJC_BRIDGING_HEADER = "LegalLifelines/LegalLifelines-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-				TARGETED_DEVICE_FAMILY = "1";
-				CODE_SIGN_ENTITLEMENTS = LegalLifelines/LegalLifelines.entitlements;
 			};
 			name = Debug;
 		};
@@ -275,6 +275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LegalLifelines/LegalLifelines.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = LegalLifelines/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -288,13 +289,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.legallifelines.imranDev";
-				PRODUCT_NAME = "LegalLifelines";
+				PRODUCT_BUNDLE_IDENTIFIER = com.legallifelines.app;
+				PRODUCT_NAME = LegalLifelines;
 				SWIFT_OBJC_BRIDGING_HEADER = "LegalLifelines/LegalLifelines-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-				TARGETED_DEVICE_FAMILY = "1";
-				CODE_SIGN_ENTITLEMENTS = LegalLifelines/LegalLifelines.entitlements;
 			};
 			name = Release;
 		};
